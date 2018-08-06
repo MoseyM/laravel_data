@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'UserController@index');
+
+Route::resource('user','UserController');
+Route::get('all', 'DatatableController@allData');
+Route::get('index', 'DatatableController@getIndex');
